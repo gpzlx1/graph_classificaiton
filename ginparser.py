@@ -18,7 +18,7 @@ class Parser():
         # dataset
         self.parser.add_argument(
             '--dataset', type=str, default="MUTAG",
-            choices=['MUTAG', 'COLLAB', 'IMDBBINARY', 'IMDBMULTI'],
+            choices=['MUTAG', 'COLLAB', 'IMDBBINARY', 'IMDBMULTI', 'PTC'],
             help='name of dataset (default: MUTAG)')
         self.parser.add_argument(
             '--batch_size', type=int, default=32,
@@ -75,6 +75,9 @@ class Parser():
         self.parser.add_argument(
             '--final_dropout', type=float, default=0.5,
             help='final layer dropout (default: 0.5)')
+        self.parser.add_argument(
+            '--model', type=str, default='gin',
+            help='model (default gin)')
 
         # done
         self.args = self.parser.parse_args()
