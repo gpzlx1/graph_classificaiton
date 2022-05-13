@@ -61,6 +61,9 @@ class Parser():
         self.parser.add_argument(
             '--learn_eps', action="store_true",
             help='learn the epsilon weighting')
+        self.parser.add_argument(
+            '--degree_as_nlabel', action="store_true",
+            help='use one-hot encodings of node degrees as node feature vectors')
 
         # learning
         self.parser.add_argument(
