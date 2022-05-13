@@ -12,6 +12,7 @@ from ginparser import Parser
 from gin import GIN
 from gcn import GCN
 import time
+from utils.compresser import Compresser
 
 
 def train(args, net, trainloader, optimizer, criterion, epoch):
@@ -88,6 +89,10 @@ def main(args):
         args.device = torch.device("cpu")
 
     dataset = GINDataset(args.dataset, not args.learn_eps, args.degree_as_nlabel)
+
+    print(len(dataset))
+    print(dataset[1])
+    print(dataset[1][0].ndata['attr'])
 
     trainloader, validloader = GINDataLoader(
         dataset, batch_size=args.batch_size, device=args.device,

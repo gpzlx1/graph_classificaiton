@@ -82,5 +82,17 @@ class Parser():
             '--model', type=str, default='gin',
             help='model (default gin)')
 
+        self.parser.add_argument(
+            '--mode', type=str, default='sq',
+            help='compression mode (default sq)')
+
+        self.parser.add_argument(
+            '--length', type=int, default=1,
+            help='compression length (default 1)')
+
+        self.parser.add_argument(
+            '--width', type=int, default=1,
+            help='compression width (default 1)')
+
         # done
         self.args = self.parser.parse_args()
