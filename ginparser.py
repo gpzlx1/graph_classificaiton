@@ -18,7 +18,7 @@ class Parser():
         # dataset
         self.parser.add_argument(
             '--dataset', type=str, default="MUTAG",
-            choices=['MUTAG', 'COLLAB', 'IMDBBINARY', 'IMDBMULTI', 'PTC'],
+            choices=['MUTAG', 'COLLAB', 'IMDBMULTI', 'PTC'],
             help='name of dataset (default: MUTAG)')
         self.parser.add_argument(
             '--batch_size', type=int, default=32,
